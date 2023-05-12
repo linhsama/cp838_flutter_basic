@@ -33,9 +33,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   final _formKey = GlobalKey<FormState>();
-
-  String _username = "";
-  String _password = "";
+  final _username = TextEditingController();
+  final _password = TextEditingController();
 
 
   @override
@@ -51,16 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextFormField(
+            controller: _username,
             decoration: const InputDecoration(
               icon: Icon(Icons.person),
               hintText: '',
               labelText: 'Username',
             ),
-            onChanged: (value) {
-               setState(() {
-                 _username = value.toString();
-               });
-            },
+            // onChanged: (value) {
+            //    setState(() {
+            //      _username = value.toString();
+            //    });
+            // },
             validator: (value) {
               return (value == null  || value.isEmpty ? 'Username is required' : null);
             },
@@ -68,16 +68,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
           TextFormField(
             obscureText: true,
+            controller: _password,
             decoration: const InputDecoration(
               icon: Icon(Icons.lock),
               hintText: '',
               labelText: 'Password',
             ),
-            onChanged: (value) {
-                setState(() {
-                  _password = value.toString();
-                });
-            },
+            // onChanged: (value) {
+            //     setState(() {
+            //       _password = value.toString();
+            //     });
+            // },
             validator: (value) {
               return (value == null  || value.isEmpty ? 'Password is required' : null);
             },
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('_username: $_username\n_password: $_password')),
+                      SnackBar(content: Text("_username: " + _username.text + "\n _password: " + _password.text)),
                     );
                   }
                 },
