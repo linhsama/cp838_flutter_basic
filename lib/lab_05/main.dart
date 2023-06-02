@@ -34,6 +34,8 @@ class _QuizPageState extends State<QuizPage> {
   List <Icon> scorekeeper = [
     //to check the score
   ];
+
+  int num_correctanswer = 0;
   void checkanswers(bool userpickedanswer){
     bool correctanswer=quizbrain.getanswer();
 
@@ -42,15 +44,17 @@ class _QuizPageState extends State<QuizPage> {
         Alert(
           context: context,
           title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
+          desc: 'You\'ve reached the end of the quiz. \n Your correct answer ${num_correctanswer} per ${scorekeeper.length}',
         ).show();
         quizbrain.reset();
+        num_correctanswer = 0;
         scorekeeper=[];
 
 
       }
       else if (userpickedanswer== correctanswer){
         scorekeeper.add(Icon(Icons.check,color: Colors.green,));
+        num_correctanswer ++;
       }
 
       else{
