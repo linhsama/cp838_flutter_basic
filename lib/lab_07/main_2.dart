@@ -1,5 +1,5 @@
 import 'package:cp838_flutter_basic/lab_07/network.dart';
-import 'package:cp838_flutter_basic/lab_07/Photo.dart';
+import 'package:cp838_flutter_basic/lab_07/post.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -14,17 +14,17 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  final List<Photo> _Photos = <Photo>[];
-  List<Photo> _PhotosDisplay = <Photo>[];
+  final List<Post> _posts = <Post>[];
+  List<Post> _postsDisplay = <Post>[];
   Network network = Network();
 
   @override
   void initState() {
     super.initState();
-    network.fetchPhoto().then((value) {
+    network.fetchPost().then((value) {
       setState(() {
-        _Photos.addAll(value);
-        _PhotosDisplay = _Photos;
+        _posts.addAll(value);
+        _postsDisplay = _posts;
       });
     });
     super.initState();
@@ -48,12 +48,12 @@ class _MyAppState extends State<MyApp> {
                 )),
           ),
           body: FutureBuilder<List<dynamic>>(
-            future: network.fetchPhoto(),
+            future: network.fetchPost(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Center(child:
                   ListView.builder(
-                    itemCount: _PhotosDisplay.length + 1,
+                    itemCount: _postsDisplay.length + 1,
                     itemBuilder: (BuildContext context, int index) {
                       return index == 0 ? _search() : _listRenderer(index - 1);
                     })
@@ -81,12 +81,11 @@ class _MyAppState extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                    _PhotosDisplay[index].title,
+                    _postsDisplay[index].title,
                     style: const TextStyle(
                         fontSize: 22, fontWeight: FontWeight.bold
                     )
-                ),
-              Image.network(_PhotosDisplay[index].thumbnailUrl,),
+                )
               ],
             )
         )
@@ -104,8 +103,8 @@ class _MyAppState extends State<MyApp> {
         onChanged: (text) {
           text = text.toLowerCase();
           setState(() {
-            _PhotosDisplay = _Photos.where((Photo) {
-              var title = Photo.title.toLowerCase();
+            _postsDisplay = _posts.where((post) {
+              var title = post.title.toLowerCase();
               return title.contains(text);
             }).toList();
           });
