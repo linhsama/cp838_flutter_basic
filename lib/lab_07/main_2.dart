@@ -1,4 +1,4 @@
-import 'package:cp838_flutter_basic/lab_07/network.dart';
+import 'package:cp838_flutter_basic/lab_07/network_2.dart';
 import 'package:cp838_flutter_basic/lab_07/post.dart';
 import 'package:flutter/material.dart';
 
