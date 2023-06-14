@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/images/uni.jpg'),
+              backgroundImage: AssetImage('lib/images/logo.png'),
             ),
             const Text('Lê Vũ Linh', style: TextStyle(
               fontFamily: 'Pacifico',

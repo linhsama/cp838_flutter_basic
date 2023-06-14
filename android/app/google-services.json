@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "633852875062",
+    "project_id": "cp838-lab9-chatapp",
+    "storage_bucket": "cp838-lab9-chatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633852875062:android:a599e36c32c28a720f2397",
+        "android_client_info": {
+          "package_name": "com.example.cp838_flutter_basic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633852875062-248mlpj4qkfa8j2tev3aurhp5u60h10f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLEhm2pheV5giWMbN5Aw-Eqia5cwfZwpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633852875062-248mlpj4qkfa8j2tev3aurhp5u60h10f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

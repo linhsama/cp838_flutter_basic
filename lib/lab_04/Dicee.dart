@@ -51,10 +51,10 @@ class _DiceeState extends State<Dicee> {
       body: Center(
         child: Row(
           children: [
-            Expanded(child: TextButton(child: Image.asset('lib/lab_04/images/dice${leftDiceNumber}.png'),onPressed: () {
+            Expanded(child: TextButton(child: Image.asset('lib/images/dice${leftDiceNumber}.png'),onPressed: () {
               changeDiceFace();
             },)),
-            Expanded(child: TextButton(child: Image.asset('lib/lab_04/images/dice${rightDiceNumber}.png'),onPressed: () {
+            Expanded(child: TextButton(child: Image.asset('lib/images/dice${rightDiceNumber}.png'),onPressed: () {
               changeDiceFace();
             },)),
           ],
