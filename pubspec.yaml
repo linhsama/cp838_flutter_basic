@@ -57,6 +57,7 @@ dependencies:
   firebase_storage: ^11.2.3
   http: ^0.13.6
   intl: ^0.18.1
+  permission_handler: ^10.3.0
 
 
 dev_dependencies:
@@ -128,4 +129,4 @@ flutter:
         - asset: lib/fonts/Arima-Regular.ttf
   assets:
     - lib/images/
-    - lib_00/images/
+    - lib/lib_00/images/

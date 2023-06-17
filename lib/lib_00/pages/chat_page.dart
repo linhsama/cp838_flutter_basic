@@ -202,7 +202,7 @@ class ChatPageState extends State<ChatPage> {
                               errorBuilder: (context, object, stackTrace) {
                                 return Material(
                                   child: Image.asset(
-                                    'lib_00/images/img_not_available.jpeg',
+                                    'lib/lib_00/images/img_not_available.jpeg',
                                     width: 200,
                                     height: 200,
                                     fit: BoxFit.cover,
@@ -237,7 +237,7 @@ class ChatPageState extends State<ChatPage> {
                     // Sticker
                     : Container(
                         child: Image.asset(
-                          'lib_00/images/${messageChat.content}.gif',
+                          'lib/lib_00/images/${messageChat.content}.gif',
                           width: 100,
                           height: 100,
                           fit: BoxFit.cover,
@@ -329,7 +329,7 @@ class ChatPageState extends State<ChatPage> {
                                     },
                                     errorBuilder: (context, object, stackTrace) => Material(
                                       child: Image.asset(
-                                        'lib_00/images/img_not_available.jpeg',
+                                        'lib/lib_00/images/img_not_available.jpeg',
                                         width: 200,
                                         height: 200,
                                         fit: BoxFit.cover,
@@ -360,7 +360,7 @@ class ChatPageState extends State<ChatPage> {
                             )
                           : Container(
                               child: Image.asset(
-                                'lib_00/images/${messageChat.content}.gif',
+                                'lib/lib_00/images/${messageChat.content}.gif',
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,
@@ -472,7 +472,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi1', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi1.gif',
+                    'lib/lib_00/images/mimi1.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -481,7 +481,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi2', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi2.gif',
+                    'lib/lib_00/images/mimi2.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -490,7 +490,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi3', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi3.gif',
+                    'lib/lib_00/images/mimi3.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -504,7 +504,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi4', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi4.gif',
+                    'lib/lib_00/images/mimi4.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -513,7 +513,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi5', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi5.gif',
+                    'lib/lib_00/images/mimi5.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -522,7 +522,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi6', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi6.gif',
+                    'lib/lib_00/images/mimi6.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -536,7 +536,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi7', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi7.gif',
+                    'lib/lib_00/images/mimi7.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -545,7 +545,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi8', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi8.gif',
+                    'lib/lib_00/images/mimi8.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -554,7 +554,7 @@ class ChatPageState extends State<ChatPage> {
                 TextButton(
                   onPressed: () => onSendMessage('mimi9', TypeMessage.sticker),
                   child: Image.asset(
-                    'lib_00/images/mimi9.gif',
+                    'lib/lib_00/images/mimi9.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,

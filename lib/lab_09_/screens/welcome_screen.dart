@@ -1,4 +1,4 @@
-import 'package:cp838_flutter_basic/lab_09/screens/register_screen.dart';
+import '../screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 

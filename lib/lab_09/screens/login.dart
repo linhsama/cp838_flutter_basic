@@ -1,31 +1,29 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import '../components/rounded_button.dart';
-import '../constants.dart';
-import 'chat_screen.dart';
+import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatefulWidget {
-  static const String id = 'register_screen';
+import '../component/button.dart';
+import '../contrast.dart';
+import 'chat.dart';
 
-  const RegisterScreen({super.key});
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
+  static const String id = 'login';
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  State<Login> createState() => _LoginState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginState extends State<Login> {
+  bool showSpinner = false;
   final _auth = FirebaseAuth.instance;
-  late bool showSpinner = false;
-  late String email;
-  late String password;
+  String? email ='cussc@ctu.edu.vn';
+  String? password = '123456';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ModalProgressHUD(
-        inAsyncCall: showSpinner,
-        child: Padding(
+      body:
+         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +32,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Flexible(
                 child: Hero(
                   tag: 'logo',
-                  child: SizedBox(
+                  child: Container(
                     height: 200.0,
                     child: Image.asset('lib/images/logo.png'),
                   ),
@@ -50,7 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   email = value;
                 },
                 decoration:
-                    kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
+                kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
               ),
               const SizedBox(
                 height: 8.0,
@@ -68,19 +66,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 24.0,
               ),
               RoundedButton(
-                title: 'Register',
-                color: Colors.blueAccent,
+                title: 'Log In',
+                color: Colors.lightBlueAccent,
                 onPressed: () async {
                   setState(() {
                     showSpinner = true;
                   });
                   try {
-                    final newUser = await _auth.createUserWithEmailAndPassword(
-                        email: email, password: password);
-                    if (newUser != null) {
-                      Navigator.pushNamed(context, ChatScreen.id);
+                    final user = await _auth.signInWithEmailAndPassword(
+                        email: email!, password: password!);
+                    if (user != null) {
+                      print(user);
+                      Navigator.pushNamed(context, Chat.id);
                     }
-
                     setState(() {
                       showSpinner = false;
                     });
@@ -92,7 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ],
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
